@@ -13,11 +13,29 @@ var server = http.createServer(function (request, response) {
 
     var operation = parameters.shift();
 
+
+
+    if(operation === "main.js") {
+        var data = fs.readFileSync("./public/main.js");
+        response.end( data.toString());
+        return
+    };
+
+    if(operation === "style.css") {
+        var data = fs.readFileSync("./public/style.css");
+        response.end( data.toString());
+        return
+    };
+
+    console.log(operation);
+
     switch (operation) {
 
         case "" :
-
-            
+            //gather the HTML file
+            var html = (fs.readFileSync("./public/index.html")).toString();
+            //generate HTML File on the Page
+            response.end(html)
 
             break;
 
@@ -31,8 +49,7 @@ var server = http.createServer(function (request, response) {
             break;
 
         default:
-            response.write("Default.");
-            response.end("\,");
+            response.end("\n");
     }
 });
 
