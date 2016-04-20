@@ -1,0 +1,9 @@
+#gravatarSearchDiv {
+    display: inline-block;
+}
+
+#gravatarDiv {
+    display: inline-block;
+    height: 100px;
+    width: 75px;
+}
