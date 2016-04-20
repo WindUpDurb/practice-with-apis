@@ -44,8 +44,15 @@ var server = http.createServer(function (request, response) {
             break;
 
         case "gravatar" :
-            console.log("Found Case")
             require("./public/gravatar")(parameters, response);
+            break;
+        
+        case "sentence" :
+            require("./public/sentence")(parameters, response);
+            break;
+
+        case "age" :
+            require("./public/age")(parameters, response);
             break;
 
         default:
